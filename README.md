@@ -8,7 +8,7 @@
 
 # Example of a game
 
-[example-game](/data/img/example-game.gif)
+![example-game](/data/img/example-game.gif)
 
 ---
 
