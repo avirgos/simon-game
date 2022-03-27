@@ -1,0 +1,71 @@
+body {
+    background-color: #262626;
+    font-size: 14px;
+    line-height: 1.42857143;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.back {
+    width: 42em;
+    height: 42em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.pad {
+    position: relative;
+    width: 20em;
+    height: 20em;
+    float: left;
+    opacity: 0.5;
+    border: solid 0.5em black;
+    transition: 200ms ease-out;
+}
+
+.pad:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.pad.shape1 {
+    background-color: green;
+    border-top-left-radius: 25em;
+}
+
+.pad.shape2 {
+    background-color: yellow;
+    border-top-right-radius: 25em;
+}
+
+.pad.shape3 {
+    background-color: red;
+    border-bottom-left-radius: 25em;
+}
+
+.pad.shape4 {
+    background-color: blue;
+    border-bottom-right-radius: 25em;
+}
+
+.circle {
+    width: 15em;
+    height: 15em;
+    transform: translate(12.3em, -29em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1em;
+    color: white;
+    background-color: black;
+    border-radius: 15em;
+    cursor: pointer;
+    opacity: 1;
+    border: solid 0.2em black;
+}
+
+.circle:hover {
+    border: solid 0.2em white;
+}
