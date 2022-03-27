@@ -18,7 +18,7 @@ $(document).ready(function () {
  * Initialize a game.
  */
 function init() {
-    $(".level").text("Cliquez ici pour commencer");
+    $(".level").text("Click here to begin");
     $(".pad").prop("disabled", true);
     $(".pad").css("cursor", "auto");
     $(".circle").prop("disabled", false);
