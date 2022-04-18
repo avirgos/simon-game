@@ -1,11 +1,11 @@
 /**
  * Global variables.
  */
-var playerSeq = new Array();
-var seqSounds;
-var sameSequence = true;
-var indexPlayerSeq;
-var level = 2;
+const playerSeq = new Array();
+let seqSounds;
+let sameSequence = true;
+let indexPlayerSeq;
+const level = 2;
 
 /**
  * Simon game program.
@@ -45,8 +45,8 @@ $(".circle").on("click", function () {
  * Click on the pads manually.
  */
 $(".pad").on("click", function () {
-    var getPad = this.className;
-    var nbPad = parseInt(getPad.substr(getPad.length - 1));
+    const getPad = this.className;
+    const nbPad = parseInt(getPad.substr(getPad.length - 1));
 
     // reset of a player sequence when a level is done
     if (playerSeq.length == 0) {
@@ -100,10 +100,10 @@ function randomIntFromInterval(min, max) {
  * @returns the sequence of numbers
  */
 function generateSequence(level) {
-    var nbPads = new Array();
+    const nbPads = new Array();
 
     while (nbPads.length != level) {
-        var nbPadToClick = randomIntFromInterval(1, 4);
+        const nbPadToClick = randomIntFromInterval(1, 4);
         nbPads.push(nbPadToClick);
     }
 
@@ -117,9 +117,9 @@ function generateSequence(level) {
  * @returns the sounds sequence
  */
 function createSoundSequence(seq) {
-    var nbSounds = new Array();
+    const nbSounds = new Array();
 
-    for (var i = 0; i < seq.length; ++i) {    
+    for (let i = 0; i < seq.length; ++i) {    
         nbSounds.push($(".sound" + seq[i]).get(0));
     }
 
@@ -133,9 +133,9 @@ function createSoundSequence(seq) {
  * @returns the pads sequence
  */
 function getPadsSequence(seq) {
-    var pads = new Array();
+    const pads = new Array();
 
-    for (var i = 0; i < seq.length; ++i) {    
+    for (let i = 0; i < seq.length; ++i) {    
         pads.push($(".pad.shape" + seq[i]));
     }
 
@@ -196,10 +196,10 @@ function showLevel(level) {
     $(".pad").prop("disabled", true);
     $(".pad").css("cursor", "auto");
 
-    var delay = 1000;
-    var seq = generateSequence(level);
+    const delay = 1000;
+    const seq = generateSequence(level);
     seqSounds = createSoundSequence(seq);
-    var seqPads = getPadsSequence(seq);
+    const seqPads = getPadsSequence(seq);
 
     playSoundSequence(delay, seqSounds, seqPads);
     backToInitialState(delay, seqPads);
@@ -209,11 +209,11 @@ function showLevel(level) {
  * Trigger if a player makes a mistake.
  */
 function loseGame() {
-    var delay = 2000
+    const delay = 2000;
 
     playerSeq.length = 0;
 
-    $(".level").text("You loose");
+    $(".level").text("You lost");
 
     $(".pad").prop("disabled", true);
     $(".pad").css("cursor", "auto");
