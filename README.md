@@ -21,7 +21,6 @@
 
 # TODO
 
-- [ ] Replace ```var``` by ```let``` and/or ```const```
 - [ ] Responsive design
 
 ---
